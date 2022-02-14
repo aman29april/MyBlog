@@ -1,19 +1,15 @@
-require_relative 'boot'
+require_relative "boot"
 
-require 'rails/all'
+require "rails/all"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-Dotenv::Railtie.load unless ENV['RAILS_ENV'] == 'production'
-
 module MyBlog
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
-
-    # config.action_text_syntax_highlighter.default_theme = :base16
 
     # Configuration for the application, engines, and railties goes here.
     #
